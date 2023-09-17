@@ -21,7 +21,7 @@ class RegistrationPage:
         browser.all("[for^=gender-radio]").element_by(have.exact_text(value)).click()
 
     def fill_phone_number(self, value):
-        browser.element("#userNumber").type("8999123212")
+        browser.element("#userNumber").type(value)
 
     def fill_date_of_birth(self, year, month, day):
         browser.element("#dateOfBirthInput").click()
@@ -47,18 +47,18 @@ class RegistrationPage:
         )
 
     def fill_current_adress(self, value):
-        browser.element("#currentAddress").type("Testovaya st. 43-33")
+        browser.element("#currentAddress").type(value)
 
     def select_state(self, value):
         browser.element("#state").click()
         browser.all("[id^=react-select][id*=option]").element_by(
-            have.exact_text("NCR")
+            have.exact_text(value)
         ).click()
 
     def select_city(self, value):
         browser.element("#city").click()
         browser.all("[id^=react-select][id*=option]").element_by(
-            have.exact_text("Delhi")
+            have.exact_text(value)
         ).click()
 
     @property

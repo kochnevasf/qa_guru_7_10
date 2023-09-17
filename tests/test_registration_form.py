@@ -9,25 +9,25 @@ def test_success_registration_form():
     registration_page.open()
 
     # WHEN
-    registration_page.fill_first_name("Klava")
-    registration_page.fill_last_name("Ivanova")
-    registration_page.fill_email("ak_test@test.ru")
+    registration_page.fill_first_name("Sveta")
+    registration_page.fill_last_name("Ko")
+    registration_page.fill_email("sko@test.ru")
 
     registration_page.set_gender("Female")
 
-    registration_page.fill_phone_number("8999123212")
+    registration_page.fill_phone_number("89992223344")
 
-    registration_page.fill_date_of_birth("2002", "September", "7")
+    registration_page.fill_date_of_birth("2000", "September", "1")
 
     registration_page.fill_subject("History")
     registration_page.select_hobby("Sports")
 
-    registration_page.add_picture("student.jpeg")
+    registration_page.add_picture("student.png")
 
-    registration_page.fill_current_adress("Testovaya st. 43-33")
+    registration_page.fill_current_adress("First st. 11-1")
 
     registration_page.select_state("NCR")
-    registration_page.select_city("Delhi")
+    registration_page.select_city("Moscow")
 
     browser.element("#submit").perform(command=js.click)
 
@@ -38,15 +38,15 @@ def test_success_registration_form():
 
     registration_page.registration_user_data.should(
         have.exact_texts(
-            "Klava Ivanova",
-            "ak_test@test.ru",
+            "Sveta Ko",
+            "skot@test.ru",
             "Female",
-            "8999123212",
-            "07 September,2002",
+            "89992223344",
+            "01 September,2000",
             "History",
             "Sports",
-            "student.jpeg",
-            "Testovaya st. 43-33",
-            "NCR Delhi",
+            "student.png",
+            "First st. 11-1",
+            "NCR Moscow",
         )
     )
