@@ -31,7 +31,7 @@ class RegistrationPage:
         return self
 
     def fill_phone_number(self, value):
-        browser.element("#userNumber").type("8999123212")
+        browser.element("#userNumber").type(value)
         return self
 
     def fill_date_of_birth(self, year, month, day):
@@ -46,11 +46,11 @@ class RegistrationPage:
         return self
 
     def fill_subject(self, value):
-        browser.element("#subjectsInput").type("History").press_enter()
+        browser.element("#subjectsInput").type(value).press_enter()
         return self
 
     def select_hobby(self, value):
-        browser.all(".custom-checkbox").element_by(have.exact_text("Sports")).click()
+        browser.all(".custom-checkbox").element_by(have.exact_text(value).click()
         return self
 
     def add_picture(self, file_name):
@@ -62,20 +62,20 @@ class RegistrationPage:
         return self
 
     def fill_current_adress(self, value):
-        browser.element("#currentAddress").type("Testovaya st. 43-33")
+        browser.element("#currentAddress").type(value)
         return self
 
     def select_state(self, value):
         browser.element("#state").click()
         browser.all("[id^=react-select][id*=option]").element_by(
-            have.exact_text("NCR")
+            have.exact_text(value)
         ).click()
         return self
 
     def select_city(self, value):
         browser.element("#city").click()
         browser.all("[id^=react-select][id*=option]").element_by(
-            have.exact_text("Delhi")
+            have.exact_text(value)
         ).click()
         return self
 
