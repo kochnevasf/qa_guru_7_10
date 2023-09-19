@@ -27,7 +27,7 @@ def test_success_registration_form():
     registration_page.fill_current_adress("First st. 11-1")
 
     registration_page.select_state("NCR")
-    registration_page.select_city("Moscow")
+    registration_page.select_city("Delhi")
 
     browser.element("#submit").perform(command=js.click)
 
@@ -47,6 +47,6 @@ def test_success_registration_form():
             "Sports",
             "student.png",
             "First st. 11-1",
-            "NCR Moscow",
+            "NCR Delhi",
         )
     )
