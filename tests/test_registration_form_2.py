@@ -17,7 +17,7 @@ def test_success_registration_form():
         picture="student.jpeg",
         current_adress="First 11-1",
         state="NCR",
-        city="Moscow",
+        city="Delhi",
     )
 
     registration_page.open()
